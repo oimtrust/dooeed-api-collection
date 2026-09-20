@@ -1,0 +1,40 @@
+info:
+  name: Register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseURL}}/v1/auth/register"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Oim Trust",
+        "email": "oim@gmail.com",
+        "password": "Rahasia123!",
+        "password_confirmation": "Rahasia123!"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 200 || res.status === 201) {
+          const { data } = res.body;
+
+          if (data?.token) {
+            bru.setEnvVar("token", data.token);
+            bru.setEnvVar("user_id", data.user.id);
+            bru.setEnvVar("user_name", data.user.name);
+            bru.setEnvVar("user_email", data.user.email);
+          }
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

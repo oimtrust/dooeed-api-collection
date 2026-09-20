@@ -1,0 +1,21 @@
+info:
+  name: Me
+  type: http
+  seq: 3
+
+http:
+  method: get
+  url: "{{BaseURL}}/v1/auth/me"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer {{token}}
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

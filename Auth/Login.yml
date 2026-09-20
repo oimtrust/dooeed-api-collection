@@ -1,0 +1,35 @@
+info:
+  name: Login
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BaseURL}}/v1/auth/login"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "oim@gmail.com",
+        "password": "Rahasia123!"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        if (res.getStatus() === 200 && body.data?.token) {
+          bru.setEnvVar("token", body.data.token, { persist: true });
+        } else {
+          throw new Error("Login gagal atau response tidak memiliki data.token");
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

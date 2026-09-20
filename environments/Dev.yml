@@ -1,0 +1,14 @@
+name: Dev
+variables:
+  - name: BaseURL
+    value: http://dooeed.test/api
+  - name: token
+    value: 8|tSeZehZQsH7QDuVNQ3kESnOMO7hEAWXmaoWMpnhu7ff85b1e
+  - name: user_id
+    value:
+      type: number
+      data: "1"
+  - name: user_name
+    value: Oim Trust
+  - name: user_email
+    value: oim@gmail.com
