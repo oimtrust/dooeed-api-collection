@@ -1,0 +1,32 @@
+info:
+  name: Update User
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{BaseURL}}/v1/admin/users/:user_id"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+  params:
+    - name: user_id
+      value: "{{user_id}}"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "action": "change_role", //suspend, activate, reset_password, change_role, delete
+        //"reason": "spam usernya", // if action:suspend,activate
+        "role": "admin", //if action:change_role (user, admin)
+        "confirmed": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
