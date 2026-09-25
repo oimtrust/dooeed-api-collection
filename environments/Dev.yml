@@ -3,11 +3,9 @@ variables:
   - name: BaseURL
     value: http://dooeed.test/api
   - name: token
-    value: 20|IE3NFISzlBGgE7BU9haqTVH39G6WOkPSsAr9XXGb82afff7e
+    value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZG9vZWVkLnRlc3QvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE3OTAzNTcwNTYsImV4cCI6MTc5MDM2MDY1NiwibmJmIjoxNzkwMzU3MDU2LCJqdGkiOiJnTGZqWDF2dzdEc2hjS3BMIiwic3ViIjoiMDFhMGNkYjYtOWE2MS03MDQxLWIzN2YtYjI0NzI2M2I4N2U0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInB3diI6ImMyODEzODEyMjY2NzMxMGEifQ.BD6cCzjVgzAe3NS_PxxkSBiZcWOAGBAs63p_NYD-puQ
   - name: user_id
-    value:
-      type: number
-      data: 01a0bd09-89d0-70d1-8f0a-9bfd663fd4c4
+    value: 01a0c978-e220-71e8-9317-88112a92a34c
   - name: user_name
     value: Oim Trust
   - name: user_email

@@ -1,0 +1,28 @@
+info:
+  name: Create Wealth
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BaseURL}}/v1/initial-wealth-entries"
+  headers:
+    - name: Authorization
+      value: Bearer  {{token}}
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Blu By BCA",
+        "amount": "3000000",
+        "category": "cash", //cash, debt, non_current_asset, cash_equivalent, receivable
+        "debt_type": "credit_card_paylater" // null, credit_card_paylater, other
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

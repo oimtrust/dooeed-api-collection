@@ -1,26 +1,24 @@
 info:
-  name: Forgot Password
+  name: Get Profile
   type: http
-  seq: 7
+  seq: 2
 
 http:
-  method: post
-  url: http://dooeed.test/api/v1/auth/forgot-password
+  method: GET
+  url: "{{BaseURL}}/v1/profile"
   headers:
     - name: Accept
       value: application/json
+    - name: Accept-Language
+      value: en-US,en;q=0.9
+    - name: Authorization
+      value: Bearer {{token}}
     - name: Content-Type
       value: application/json
-  body:
-    type: json
-    data: |-
-      {
-        "email": "oim@example.com"
-      }
   auth: inherit
 
 settings:
-  encodeUrl: false
+  encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Delete Wealth
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{BaseURL}}/v1/initial-wealth-entries/:id_wealth"
+  headers:
+    - name: Authorization
+      value: Bearer  {{token}}
+  params:
+    - name: id_wealth
+      value: 01a0d3c3-b0fa-733d-8ae6-e804aa3d5f99
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

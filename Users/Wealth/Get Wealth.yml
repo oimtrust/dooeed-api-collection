@@ -1,20 +1,18 @@
 info:
-  name: Me
+  name: Get Wealth
   type: http
-  seq: 5
+  seq: 1
 
 http:
-  method: get
-  url: "{{BaseURL}}/v1/auth/me"
+  method: GET
+  url: "{{BaseURL}}/v1/initial-wealth-entries"
   headers:
-    - name: Accept
-      value: application/json
     - name: Authorization
-      value: Bearer {{token}}
+      value: Bearer  {{token}}
   auth: inherit
 
 settings:
-  encodeUrl: false
+  encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
