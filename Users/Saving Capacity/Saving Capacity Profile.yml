@@ -1,0 +1,39 @@
+info:
+  name: Saving Capacity Profile
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{BaseURL}}/v1/savings-capacity-profile"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Accept-Language
+      value: en-US,en;q=0.9
+    - name: Authorization
+      value: Bearer {{token}}
+  body:
+    type: json
+    data: |-
+      {
+        "monthly_income": "18000000",
+        "monthly_expenses": "5000000",
+        "savings_capacity": "Rp 13.000.000",
+        "date_of_birth": "2001-01-16",
+        "current_age": "25.69",
+        "retirement_age": "70",
+        "remaining_years": "44.31",
+        "pre_retirement_fund": "Rp 2.658.401.263",
+        "inheritance_age": "80",
+        "retirement_duration": "10.00",
+        "retirement_fund": "Rp 600.000.000"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

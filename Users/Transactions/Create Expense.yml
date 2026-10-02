@@ -1,0 +1,29 @@
+info:
+  name: Create Expense
+  type: http
+  seq: 5
+
+http:
+  method: post
+  url: "{{BaseURL}}/v1/transactions/expenses"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  body:
+    type: json
+    data: |-
+      {
+        "category_id": "01a0e32e-7d69-732e-b845-f7608bdeab8d",
+        "amount": "100000",
+        "account_id": "01a0f86f-e58c-7081-9366-8ce5c16d5593",
+        "transaction_date": "2026-10-01",
+        "description": "Jatah Istri"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

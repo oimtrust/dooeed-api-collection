@@ -1,0 +1,32 @@
+info:
+  name: Create Category
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseURL}}/v1/categories"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer{{token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Konsumsi",
+        "icon": "receipt",
+        "parent_id": "01a0e32e-7d76-7352-a5d9-85270cf3e798", //optional
+        "type": "income" //income, expense, debt_receivable
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

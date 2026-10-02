@@ -1,0 +1,29 @@
+info:
+  name: Create Income
+  type: http
+  seq: 6
+
+http:
+  method: post
+  url: "{{BaseURL}}/v1/transactions/incomes"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+  body:
+    type: json
+    data: |-
+      {
+        "category_id": "01a0e32e-7d81-738c-b036-fdd248f15115",
+        "amount": "1000000",
+        "account_id": "01a0f86f-e589-7257-89af-bf29b95bda35",
+        "transaction_date": "2026-10-02",
+        "description": "investasi"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

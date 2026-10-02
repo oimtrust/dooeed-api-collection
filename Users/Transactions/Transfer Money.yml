@@ -1,0 +1,31 @@
+info:
+  name: Transfer Money
+  type: http
+  seq: 7
+
+http:
+  method: post
+  url: "{{BaseURL}}/v1/transactions/transfers"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  body:
+    type: json
+    data: |-
+      {
+        "category_id": "01a0e32e-7d5e-7297-a98a-80c50a962099",
+        "amount": "100000",
+        "from_account_id": "01a0f86f-e580-7055-b08e-af505119285a",
+        "to_account_id": "01a0f86f-e589-7257-89af-bf29b95bda35",
+        "fee_amount": "0",
+        "transaction_date": "2026-10-02",
+        "description": "nothing"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

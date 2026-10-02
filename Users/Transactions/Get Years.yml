@@ -1,0 +1,19 @@
+info:
+  name: Get Years
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BaseURL}}/v1/transactions/years"
+  headers:
+    - name: Authorization
+      value: Bearer{{token}}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,25 @@
+info:
+  name: Delete Category
+  type: http
+  seq: 4
+
+http:
+  method: delete
+  url: http://dooeed.test/api/v1/categories/:category_id
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer{{token}}
+  params:
+    - name: category_id
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
