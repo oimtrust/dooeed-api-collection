@@ -3,10 +3,12 @@ variables:
   - name: BaseURL
     value: http://dooeed.test/api
   - name: token
-    value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZG9vZWVkLnRlc3QvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE3OTA5NTc1NjIsImV4cCI6MTc5MDk2MTE2MiwibmJmIjoxNzkwOTU3NTYyLCJqdGkiOiI3OFRjeUs5eFZCUFVuT1JXIiwic3ViIjoiMDFhMGNkYjYtOWE2MS03MDQxLWIzN2YtYjI0NzI2M2I4N2U0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInB3diI6ImMyODEzODEyMjY2NzMxMGEifQ.DqgOihWqUbfV-tKeQ4xGKRlETWSVz36G2V18EgxMdXM
+    value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZG9vZWVkLnRlc3QvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE3OTExMDQwOTIsImV4cCI6MTc5MTEwNzY5MiwibmJmIjoxNzkxMTA0MDkyLCJqdGkiOiJBUjFOcUY0Z3dxUTVqaGZhIiwic3ViIjoiMDFhMGNkYjYtOWE2MS03MDQxLWIzN2YtYjI0NzI2M2I4N2U0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInB3diI6ImMyODEzODEyMjY2NzMxMGEifQ.eE_yWCjCXIupdIdCWTGgKi7ITk9WwjLKdaeM5_q0Uvs
   - name: user_id
     value: 01a0c978-e220-71e8-9317-88112a92a34c
   - name: user_name
     value: Oim Trust
   - name: user_email
     value: oim@gmail.com
+  - name: transaction_id
+    value: 01a0fd79-c83e-73c8-b5ee-777e15bd040e

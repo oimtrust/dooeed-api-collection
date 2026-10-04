@@ -1,14 +1,20 @@
 info:
-  name: Get Transactions
+  name: Get Account
   type: http
   seq: 5
 
 http:
   method: GET
-  url: "{{BaseURL}}/v1/transactions"
+  url: "{{BaseURL}}/v1/debts/accounts?page=1"
   headers:
+    - name: Accept
+      value: application/json
     - name: Authorization
       value: Bearer{{token}}
+  params:
+    - name: page
+      value: "1"
+      type: query
   auth: inherit
 
 settings:

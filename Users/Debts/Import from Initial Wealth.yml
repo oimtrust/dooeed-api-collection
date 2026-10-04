@@ -1,0 +1,35 @@
+info:
+  name: Import from Initial Wealth
+  type: http
+  seq: 6
+
+http:
+  method: post
+  url: "{{BaseURL}}/v1/debts/import"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer{{token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "contact_id": "01a10608-b54c-7062-84d8-9d6dd482394a",
+        "kind": "paylater",
+        "currency": "IDR",
+        "start_date": "2026-10-04",
+        "due_date": "2026-10-31",
+        "description": null,
+        "initial_wealth_entry_id": "01a0d3e3-db4c-711e-8366-adac82ea5fdd"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,22 +1,20 @@
 info:
-  name: Get Categories
+  name: Delete Transfer Money
   type: http
-  seq: 2
+  seq: 13
 
 http:
-  method: GET
-  url: "{{BaseURL}}/v1/transactions/categories?type=expense"
+  method: DELETE
+  url: "{{BaseURL}}/v1/transfers/{{transaction_id}}"
   headers:
     - name: Authorization
       value: Bearer{{token}}
-  params:
-    - name: type
-      value: expense
-      type: query
+    - name: Content-Type
+      value: application/json
   auth: inherit
 
 settings:
-  encodeUrl: true
+  encodeUrl: false
   timeout: 0
   followRedirects: true
   maxRedirects: 5

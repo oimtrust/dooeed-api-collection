@@ -1,23 +1,25 @@
 info:
-  name: Create Expense
+  name: Edit Transaction
   type: http
-  seq: 6
+  seq: 10
 
 http:
-  method: post
-  url: "{{BaseURL}}/v1/transactions/expenses"
+  method: put
+  url: "{{BaseURL}}/v1/transactions/{{transaction_id}}"
   headers:
     - name: Authorization
       value: Bearer{{token}}
+    - name: Content-Type
+      value: application/json
   body:
     type: json
     data: |-
       {
         "category_id": "01a0e32e-7d69-732e-b845-f7608bdeab8d",
-        "amount": "100000",
+        "amount": "50000",
         "account_id": "01a0f86f-e58c-7081-9366-8ce5c16d5593",
-        "transaction_date": "2026-10-01",
-        "description": "Jatah Istri"
+        "transaction_date": "2026-10-02",
+        "description": "Jalan-Jalan"
       }
   auth: inherit
 
